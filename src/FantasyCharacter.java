@@ -30,6 +30,18 @@ public abstract class FantasyCharacter implements Fighter {
         return healthPoints;
     }
 
+    public void setXp(int xp) {
+        this.xp = xp;
+    }
+
+    public void setHealthPoints(int healthPoints) {
+        this.healthPoints = healthPoints;
+    }
+
+    public void setGold(int gold) {
+        this.gold = gold;
+    }
+
     public int getStrength() {
         return strength;
     }
