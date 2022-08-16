@@ -9,9 +9,7 @@ public class Realm {
     private static Merchant merchant = null;
 
     public static void main(String[] args) {
-        //Hero player;
-        //Merchant merchant = new Merchant();
-        br = new BufferedReader(new InputStreamReader(System.in));
+             br = new BufferedReader(new InputStreamReader(System.in));
         battleScene = new BattleScene();
         System.out.println("Введите имя персонажа :");
         try {
@@ -34,13 +32,15 @@ public class Realm {
             if(merchant == null) {
                 merchant = new Merchant();
             }
-            System.out.println(String.format("Спасти наш мир от драконов вызвался %s, да пребудет с ним ШВОРЦ!", player.getName()));
+            System.out.printf("Спасти наш мир от драконов вызвался %s, да пребудет с ним ШВОРЦ!", player.getName());
             printNavigation();
         }
         switch (string) {
             case "1": {
+                System.out.println("Greeting my Lord : I can humbly offer you the following :");
                 merchant.getPotions();
                 System.out.println("Сделайте свой выбор господин " + player.getName());
+                System.out.println("Type 'da' to buy or 'no' to go back");
                 command(br.readLine());
                 printNavigation();
             }
@@ -69,11 +69,15 @@ public class Realm {
                         "\nstrength:" + player.getStrength()+
                         "\ngold:" + player.getGold()+
                         "\n----------------"
-                );printHeroNavigation();command(br.readLine());
+                );printNavigation();command(br.readLine());
             }
             case "da":{//case "STRENGTH": case "DEFENCE":{
-                System.out.println("You have : " + player.getGold() + " gold\nTherefore you can buy as many of any of ");//+merchant.getPotions()+"points" );
-                merchant.sell(Merchant.Goods.valueOf(br.readLine()),(Hero)player);
+                System.out.println("You have : " + player.getGold() + " gold\nTherefore you can buy as many of any of ");
+                merchant.getPotions();
+                System.out.println("points - type (select one from above).");//+merchant.getPotions()+"points" );
+                //String str = br.readLine();
+                merchant.sell(Goods.valueOf(br.readLine()),(Hero)player);
+                printNavigation();command(br.readLine());
             }
 
         }command(br.readLine());
@@ -84,13 +88,7 @@ public class Realm {
         System.out.println("3. Exit:");
         System.out.println("4. Print Hero");
     }
-    private static void printHeroNavigation() {
-        System.out.println("What to do ?");
-        System.out.println("5. Restore Health");
-        System.out.println("6. Apply Potion");
-        System.out.println("7. Main Menu");
-        System.out.println("4. Print Hero");
-    }
+
     public static
     void commitFight() {
         battleScene.fight(player, createMonster(), new FightCallBack() {

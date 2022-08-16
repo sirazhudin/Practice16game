@@ -1,0 +1,32 @@
+
+----------------------
+покупка не всегда работает иногда выдает ошибку
+1. To Merchant
+2. To MirkWood
+3. Exit:
+4. Print Hero
+1
+Greeting my Lord : I can humbly offer you the following :
+HEALTH
+DEFENCE
+STRENGTH
+Сделайте свой выбор господин sss
+Type 'da' to buy or 'no' to go back
+da
+You have : 10 gold
+Therefore you can buy as many of any of
+HEALTH
+DEFENCE
+STRENGTH
+points - type (select one from above).
+HEALTH
+HEALTH
+
+HEALTH
+----------- пришлось печатать трижды
+your health 70
+Where to ?
+1. To Merchant
+2. To MirkWood
+3. Exit:
+4. Print Hero
