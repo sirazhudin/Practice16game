@@ -30,6 +30,7 @@ public class BattleScene {
         }if(defenderHealth <=0 && defender instanceof Hero) {
             System.out.println("Вы пали смертью харбрых - (наверно)");
             fightCallBack.fightLost();
+            Thread.currentThread().isDaemon();
             return true;
         } else if(defenderHealth<=0) {
             System.out.println(String.format("Враг Повержен! Вы получаете %d опыта и %d золота ",

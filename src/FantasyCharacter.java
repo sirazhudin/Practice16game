@@ -22,9 +22,7 @@ public abstract class FantasyCharacter implements Fighter {
         else return 0;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() {return this.name;}
 
     public int getHealthPoints() {
         return healthPoints;
@@ -44,6 +42,10 @@ public abstract class FantasyCharacter implements Fighter {
 
     public int getStrength() {
         return strength;
+    }
+
+    public void setStrength(int strength) {
+        this.strength=strength;
     }
 
     public int getDexterity() {
